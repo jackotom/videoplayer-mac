@@ -1,8 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle">
-<channel>
-<title>视频播放器</title>
-<description>视频播放器更新源（首个正式版本发布后由 publish.sh 自动填充）</description>
-<language>zh-CN</language>
-</channel>
+<?xml version="1.0" standalone="yes"?>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+    <channel>
+        <title>VideoPlayer</title>
+        <item>
+            <title>1.0.6</title>
+            <pubDate>Mon, 24 Aug 2026 12:31:30 +0800</pubDate>
+            <link>https://github.com/jackotom/videoplayer-mac</link>
+            <sparkle:fullReleaseNotesLink>https://github.com/jackotom/videoplayer-mac/releases/tag/v1.0.6</sparkle:fullReleaseNotesLink>
+            <sparkle:version>1.0.6</sparkle:version>
+            <sparkle:shortVersionString>1.0.6</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>12.0</sparkle:minimumSystemVersion>
+            <sparkle:hardwareRequirements>arm64</sparkle:hardwareRequirements>
+            <enclosure url="https://github.com/jackotom/videoplayer-mac/releases/download/VideoPlayer-1.0.6.dmg" length="18566508" type="application/octet-stream" sparkle:edSignature="CIQdqlVPILmO+B3rB8VvamR18Zu2/ygDlkrdQlSgkCFaOnl9+oPzKgc4sug4XXRR5ZLgu73WudbTPycXrXnRBw=="/>
+        </item>
+    </channel>
 </rss>
