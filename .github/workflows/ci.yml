@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build-and-smoke:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 安装 FFmpeg
+        run: brew install ffmpeg
+
+      - name: 拉取 Sparkle 框架
+        run: ./scripts/fetch_sparkle.sh
+
+      - name: 构建
+        run: ./build.sh
+
+      - name: 冒烟测试（AVKit 后端）
+        run: |
+          ffmpeg -y -loglevel error -f lavfi -i testsrc=duration=3:size=320x240:rate=25 \
+            -pix_fmt yuv420p -c:v libx264 /tmp/t.mp4
+          ./build/VideoPlayer.app/Contents/MacOS/VideoPlayer --snapshot /tmp/s1.png /tmp/t.mp4
+          test -f /tmp/s1.png && echo "AVKit 后端 OK"
+
+      - name: 冒烟测试（FFmpeg 后端）
+        run: |
+          ffmpeg -y -loglevel error -f lavfi -i testsrc2=duration=3:size=320x240:rate=25 \
+            -pix_fmt yuv420p -c:v libx264 -f flv /tmp/t.flv
+          defaults write com.local.videoplayer preferredBackend -string ffmpeg
+          ./build/VideoPlayer.app/Contents/MacOS/VideoPlayer --snapshot /tmp/s2.png /tmp/t.flv
+          test -f /tmp/s2.png && echo "FFmpeg 后端 OK"

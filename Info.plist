@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleName</key>
+    <string>视频播放器</string>
+    <key>CFBundleDisplayName</key>
+    <string>视频播放器</string>
+    <key>CFBundleIdentifier</key>
+    <string>com.local.videoplayer</string>
+    <key>CFBundleExecutable</key>
+    <string>VideoPlayer</string>
+    <key>CFBundleVersion</key>
+    <string>1.0.6</string>
+    <key>CFBundleShortVersionString</key>
+    <string>1.0.6</string>
+    <key>CFBundlePackageType</key>
+    <string>APPL</string>
+    <key>CFBundleInfoDictionaryVersion</key>
+    <string>6.0</string>
+    <key>LSMinimumSystemVersion</key>
+    <string>12.0</string>
+    <key>LSApplicationCategoryType</key>
+    <string>public.app-category.video</string>
+    <key>NSHighResolutionCapable</key>
+    <true/>
+    <key>NSPrincipalClass</key>
+    <string>NSApplication</string>
+    <key>CFBundleIconFile</key>
+    <string>AppIcon</string>
+
+    <!-- Sparkle 自动更新 -->
+    <key>SUFeedURL</key>
+    <string>https://raw.githubusercontent.com/jackotom/videoplayer-mac/main/appcast.xml</string>
+    <key>SUPublicEDKey</key>
+    <string>0d4KN4VuQjxDSwviJjnEpV5SeMyZB3eTRX0vQbgD380=</string>
+    <key>SUEnableAutomaticChecks</key>
+    <true/>
+
+    <key>UTExportedTypeDeclarations</key>
+    <array>
+        <dict>
+            <key>UTTypeIdentifier</key>
+            <string>com.local.videoplayer.mkv</string>
+            <key>UTTypeDescription</key>
+            <string>Matroska Video</string>
+            <key>UTTypeConformsTo</key>
+            <array><string>public.movie</string></array>
+            <key>UTTypeTagSpecification</key>
+            <dict>
+                <key>public.filename-extension</key>
+                <array><string>mkv</string></array>
+                <key>public.mime-type</key>
+                <string>video/x-matroska</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>UTTypeIdentifier</key>
+            <string>com.local.videoplayer.flv</string>
+            <key>UTTypeDescription</key>
+            <string>Flash Video</string>
+            <key>UTTypeConformsTo</key>
+            <array><string>public.movie</string></array>
+            <key>UTTypeTagSpecification</key>
+            <dict>
+                <key>public.filename-extension</key>
+                <array><string>flv</string></array>
+                <key>public.mime-type</key>
+                <string>video/x-flv</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>UTTypeIdentifier</key>
+            <string>com.local.videoplayer.webm</string>
+            <key>UTTypeDescription</key>
+            <string>WebM Video</string>
+            <key>UTTypeConformsTo</key>
+            <array><string>public.movie</string></array>
+            <key>UTTypeTagSpecification</key>
+            <dict>
+                <key>public.filename-extension</key>
+                <array><string>webm</string></array>
+                <key>public.mime-type</key>
+                <string>video/webm</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>UTTypeIdentifier</key>
+            <string>com.local.videoplayer.wmv</string>
+            <key>UTTypeDescription</key>
+            <string>Windows Media Video</string>
+            <key>UTTypeConformsTo</key>
+            <array><string>public.movie</string></array>
+            <key>UTTypeTagSpecification</key>
+            <dict>
+                <key>public.filename-extension</key>
+                <array><string>wmv</string></array>
+                <key>public.mime-type</key>
+                <string>video/x-ms-wmv</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>UTTypeIdentifier</key>
+            <string>com.local.videoplayer.ts</string>
+            <key>UTTypeDescription</key>
+            <string>MPEG Transport Stream</string>
+            <key>UTTypeConformsTo</key>
+            <array><string>public.mpeg</string></array>
+            <key>UTTypeTagSpecification</key>
+            <dict>
+                <key>public.filename-extension</key>
+                <array><string>ts</string><string>m2ts</string><string>mts</string></array>
+                <key>public.mime-type</key>
+                <string>video/mp2t</string>
+            </dict>
+        </dict>
+    </array>
+
+    <key>CFBundleDocumentTypes</key>
+    <array>
+        <dict>
+            <key>CFBundleTypeName</key>
+            <string>视频文件</string>
+            <key>CFBundleTypeRole</key>
+            <string>Viewer</string>
+            <key>LSHandlerRank</key>
+            <string>Alternate</string>
+            <key>LSItemContentTypes</key>
+            <array>
+                <string>public.movie</string>
+                <string>public.audio</string>
+                <string>public.video</string>
+                <string>public.mpeg</string>
+                <string>public.mpeg-4</string>
+                <string>public.avi</string>
+                <string>com.apple.quicktime-movie</string>
+                <string>public.3gpp</string>
+                <string>public.3gpp2</string>
+                <string>com.local.videoplayer.mkv</string>
+                <string>com.local.videoplayer.flv</string>
+                <string>com.local.videoplayer.webm</string>
+                <string>com.local.videoplayer.wmv</string>
+                <string>com.local.videoplayer.ts</string>
+            </array>
+            <key>CFBundleTypeExtensions</key>
+            <array>
+                <string>mp4</string><string>mov</string><string>m4v</string><string>mkv</string>
+                <string>webm</string><string>avi</string><string>flv</string><string>wmv</string>
+                <string>ts</string><string>m2ts</string><string>mts</string><string>mpg</string>
+                <string>mpeg</string><string>vob</string><string>3gp</string><string>3g2</string>
+                <string>rm</string><string>rmvb</string><string>m4a</string><string>mp3</string>
+                <string>aac</string><string>flac</string><string>wav</string>
+            </array>
+        </dict>
+    </array>
+</dict>
+</plist>

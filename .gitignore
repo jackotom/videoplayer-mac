@@ -1,0 +1,12 @@
+# 构建产物
+build/
+*.dmg
+.dmg_staging/
+
+# Sparkle 框架与密钥（框架用 scripts/fetch_sparkle.sh 拉取；私钥在钥匙串）
+Sparkle.framework/
+keys/
+appcast_work/
+
+# 系统文件
+.DS_Store
