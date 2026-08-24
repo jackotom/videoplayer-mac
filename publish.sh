@@ -13,17 +13,24 @@ TAG="v${VERSION}"
 [ -x tools/generate_appcast ] || { echo "❌ 请先运行 ./scripts/fetch_sparkle.sh"; exit 1; }
 
 echo "==> 创建 GitHub Release ${TAG} 并上传 ${DMG} ..."
-gh release create "${TAG}" "${DMG}" \
-    --repo "${REPO}" \
-    --title "视频播放器 ${VERSION}" \
-    --notes "本次更新内容请在此填写。"
+if gh release view "${TAG}" --repo "${REPO}" >/dev/null 2>&1; then
+    echo "    Release ${TAG} 已存在，跳过创建。"
+else
+    gh release create "${TAG}" "${DMG}" \
+        --repo "${REPO}" \
+        --title "视频播放器 ${VERSION}" \
+        --notes "本次更新内容请在此填写。"
+fi
 
 echo "==> 生成 appcast.xml（EdDSA 私钥自动取自钥匙串）..."
-rm -rf appcast_work
-mkdir -p "appcast_work/${TAG}"
-cp "${DMG}" "appcast_work/${TAG}/"
+# generate_appcast 只扫描平铺目录；appcast.xml 会复用并保留历史版本条目，
+# --download-url-prefix 仅作用于本次新增的条目
+mkdir -p appcast_work
+cp "${DMG}" "appcast_work/"
 ./tools/generate_appcast \
-    --download-url-prefix "https://github.com/${REPO}/releases/download" \
+    --download-url-prefix "https://github.com/${REPO}/releases/download/${TAG}/" \
+    --full-release-notes-url "https://github.com/${REPO}/releases/tag/${TAG}" \
+    --link "https://github.com/${REPO}" \
     appcast_work/
 mv appcast_work/appcast.xml appcast.xml
 
