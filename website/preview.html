@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050505">
+<meta name="description" content="视频播放器 — 通吃所有格式的轻量原生 macOS 播放器。双解码后端、字幕、多音轨、章节、画中画、A-B 循环，免费开源。">
+<title>视频播放器 — 通吃所有格式的轻量原生 macOS 播放器</title>
+<link rel="icon" href="wp-theme/videoplayer/assets/img/icon.png">
+<link rel="stylesheet" href="wp-theme/videoplayer/style.css">
+</head>
+<body>
+<canvas id="space-canvas" aria-hidden="true"></canvas>
+<div class="site-shell">
+
+<header class="topbar" id="topbar">
+	<div class="topbar-inner">
+		<a class="brand" href="#">
+			<img src="wp-theme/videoplayer/assets/img/icon.png" alt="视频播放器 图标" width="30" height="30">
+			<span>视频播放器<small>v1.0.6</small></span>
+		</a>
+		<nav class="nav" aria-label="主导航">
+			<a href="#features">功能</a>
+			<a href="#download">下载</a>
+			<a href="#changelog">更新日志</a>
+			<a href="#faq">常见问题</a>
+		</nav>
+		<div class="topbar-actions">
+			<a class="btn btn-ghost btn-sm" href="https://github.com/jackotom/videoplayer-mac" rel="noopener" target="_blank">GitHub</a>
+			<a class="btn btn-primary btn-sm" href="https://github.com/jackotom/videoplayer-mac/releases/latest/download/VideoPlayer-1.0.6.dmg">免费下载</a>
+		</div>
+	</div>
+</header>
+
+<main id="main">
+
+<section class="hero">
+	<div class="wrap">
+		<div class="hero-inner">
+			<div>
+				<span class="eyebrow"><span class="dot"></span>macOS 原生 · 免费开源</span>
+				<h1>
+					视频播放器<br>
+					<span class="grad">通吃所有格式</span>
+					<span class="hero-title-note">VideoPlayer — 轻量原生 macOS 视频播放器，专为 Apple Silicon 优化</span>
+				</h1>
+				<p class="hero-desc">双解码后端，真正通吃所有格式：AVFoundation 硬件解码省电流畅，FFmpeg 软解兜底无死角。字幕、多音轨、章节、画中画、A-B 循环……原生体验，零外部依赖。</p>
+				<div class="hero-actions">
+					<a class="btn btn-primary" href="https://github.com/jackotom/videoplayer-mac/releases/latest/download/VideoPlayer-1.0.6.dmg">⬇ 免费下载 macOS 版</a>
+					<a class="btn btn-ghost" href="#features">查看功能</a>
+					<a class="btn btn-ghost" href="#changelog">更新日志</a>
+				</div>
+				<div class="hero-facts">
+					<span><i class="tick">✓</i> 免费开源</span>
+					<span><i class="tick">✓</i> Apple Silicon 原生</span>
+					<span><i class="tick">✓</i> v1.0.6</span>
+					<span><i class="tick">✓</i> 零外部依赖</span>
+				</div>
+			</div>
+			<div class="hero-visual">
+				<div class="app-frame">
+					<img src="wp-theme/videoplayer/assets/img/hero.png" alt="视频播放器界面截图：双解码引擎、自绘控制条、播放列表侧栏" width="1176" height="662">
+					<div class="frame-bar"><i></i><i></i><i></i></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section" id="features">
+	<div class="wrap">
+		<div class="section-head">
+			<div class="section-kicker">Six Parts, One Player</div>
+			<h2 class="section-title">六个部分，组成一个顺手的播放器。</h2>
+			<p class="section-sub">从双击文件开始，到字幕、音轨、章节、快捷键与自动更新——每件事都被安排得明明白白。</p>
+		</div>
+		<div class="feature-grid">
+			<a class="feature-card" href="#feature-01"><div class="num">01</div><h3>双解码引擎</h3><span class="en">Dual Decode Engine</span><p>AVFoundation 硬件解码默认省电流畅，FFmpeg 软解兜底通吃冷门格式；无法播放时约 3ms 自动切换，也可以 ⌥⌘R 手动切换。</p></a>
+			<a class="feature-card" href="#feature-02"><div class="num">02</div><h3>字幕系统</h3><span class="en">Subtitles</span><p>外挂 srt/vtt 自动加载，MKV 内嵌字幕提取与选择；字号、颜色、位置可调，G/H 一键同步微调。</p></a>
+			<a class="feature-card" href="#feature-03"><div class="num">03</div><h3>多音轨与章节</h3><span class="en">Audio Tracks &amp; Chapters</span><p>双语 MKV 中英音轨一键切换并按文件记忆；章节跳转、进度条刻度、媒体信息面板一应俱全。</p></a>
+			<a class="feature-card" href="#feature-04"><div class="num">04</div><h3>播放控制</h3><span class="en">Playback Control</span><p>0.25x–4x 倍速跨启动记忆、A-B 循环、迷你模式、画中画、音频延迟微调、媒体键与 Now Playing。</p></a>
+			<a class="feature-card" href="#feature-05"><div class="num">05</div><h3>快捷键与播放列表</h3><span class="en">Shortcuts &amp; Playlist</span><p>空格/K 播放、J/L 快进快退、←→ 微调、G/H 字幕、A/B 循环点；列表拖拽排序、自然排序连播。</p></a>
+			<a class="feature-card" href="#feature-06"><div class="num">06</div><h3>更新与分发</h3><span class="en">Updates &amp; Distribution</span><p>Sparkle 自动更新静默升级；Developer ID 签名 + Apple 公证，双击即装零拦截；MIT 开源、零外部依赖。</p></a>
+		</div>
+	</div>
+</section>
+
+<!-- 深潜区块示意（完整版见 WordPress 主题 front-page.php） -->
+<section class="section alt" id="feature-01">
+	<div class="wrap">
+		<div class="deep">
+			<div>
+				<span class="kicker-en">Dual Engine</span>
+				<h2>两种引擎，一种体验，没有打不开的文件。</h2>
+				<p class="lead">常见格式走硬件解码，冷门格式自动落入 FFmpeg 软解。对使用者而言，切换完全无感——你只需要双击文件，其余交给播放器。</p>
+				<div class="mini-grid">
+					<div class="mini-card"><b>AVFoundation 硬解（默认）</b><span>GPU 解码，省电、流畅，覆盖 MP4 / MOV / MKV / WebM 等常见格式。</span></div>
+					<div class="mini-card"><b>FFmpeg 软解兜底</b><span>DivX/Xvid AVI、FLV、WMV、FFV1、DTS 音轨等一切冷门格式，无死角。</span></div>
+					<div class="mini-card"><b>自动回退（约 3ms）</b><span>AVPlayer 解码失败瞬间切换到 FFmpeg 后端，几乎无感。</span></div>
+					<div class="mini-card"><b>VideoToolbox GPU 加速</b><span>软解后端同样支持硬件解码，4K 更流畅省电。</span></div>
+				</div>
+			</div>
+			<div class="visual">
+				<div class="mock engine-mock">
+					<div class="mock-head">⌘O 打开文件</div>
+					<div class="mock-engine on"><b>AVFoundation 硬件解码</b><span>GPU 解码 · 省电流畅 · 默认后端</span></div>
+					<div class="mock-arrow">自动回退 · 约 3ms</div>
+					<div class="mock-engine"><b>FFmpeg 软解兜底</b><span>通吃冷门格式 · VideoToolbox 加速可选</span></div>
+					<div class="mock-log"><span>[AV] 状态变化 status=1 ✓</span><span>[FFmpeg] 已挂载 VideoToolbox 硬件加速</span></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section" id="feature-02">
+	<div class="wrap">
+		<div class="deep rev">
+			<div>
+				<span class="kicker-en">Subtitles</span>
+				<h2>字幕这件事，本来就不该折腾。</h2>
+				<p class="lead">同目录同名字幕自动挂上；内嵌字幕轨随意切换，并按文件记住你的选择。字幕对不上轴？按两下 G/H 就好。</p>
+				<div class="mini-grid">
+					<div class="mini-card"><b>外挂字幕自动加载</b><span>同名 .srt / .vtt（含 .zh / .chs 等命名）打开视频即挂载。</span></div>
+					<div class="mini-card"><b>内嵌字幕轨提取</b><span>MKV/MP4 内嵌 SRT/ASS/VTT/mov_text 一次性提取，右键切换。</span></div>
+					<div class="mini-card"><b>样式可调</b><span>字号 14–48、颜色、距底距离，偏好设置里所见即所得。</span></div>
+					<div class="mini-card"><b>同步微调 G/H</b><span>±0.5 秒逐档调整，带屏显提示，支持 ±60 秒范围。</span></div>
+				</div>
+			</div>
+			<div class="visual">
+				<div class="mock subtitle-mock">
+					<div class="mock-head">外挂字幕 · 内嵌字幕轨 · 同步微调</div>
+					<div class="mock-stage"><div class="mock-sub">通吃所有格式的轻量原生播放器<span class="mock-sub-tag">SRT · VTT · ASS · mov_text</span></div></div>
+					<div class="mock-toolbar"><span class="mock-chip on">字幕 1（中文）✓</span><span class="mock-chip">字幕 2（English）</span><span class="mock-chip">关闭</span><span class="mock-chip">G/H 同步 +0.5s</span></div>
+					<div class="mock-sliders"><div><label>字号</label><i style="width:55%"></i></div><div><label>位置</label><i style="width:35%"></i></div><div><label>颜色</label><i style="width:70%"></i></div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section alt" id="feature-03">
+	<div class="wrap">
+		<div class="deep">
+			<div>
+				<span class="kicker-en">Audio &amp; Chapters</span>
+				<h2>多音轨、章节、媒体信息，专业播放器的标配。</h2>
+				<p class="lead">双语电影一键切中文/英文音轨，下次打开自动恢复；章节直接显示在进度条上；⌘I 查看编码、码率、分辨率。</p>
+				<div class="mini-grid">
+					<div class="mini-card"><b>多音轨切换</b><span>右键 → 音轨，任意切换；软解模式重建解码器无缝续播。</span></div>
+					<div class="mini-card"><b>按文件记忆</b><span>音轨与字幕轨选择按文件持久化，重开自动恢复。</span></div>
+					<div class="mini-card"><b>章节跳转</b><span>MKV/MP4 章节刻度显示在进度条上，右键直达任意章节。</span></div>
+					<div class="mini-card"><b>媒体信息 ⌘I</b><span>容器、编码、分辨率、帧率、码率、声道，一览无余。</span></div>
+				</div>
+			</div>
+			<div class="visual">
+				<div class="mock audio-mock">
+					<div class="mock-head">音轨 · 章节 · 媒体信息 ⌘I</div>
+					<div class="mock-track-list">
+						<div class="mock-track on"><b>音轨 1（中文）</b><span>aac · 48kHz · 2 声道</span><i>✓</i></div>
+						<div class="mock-track"><b>音轨 2（English）</b><span>aac · 48kHz · 2 声道</span></div>
+						<div class="mock-track"><b>音轨 3（日本語）</b><span>aac · 48kHz · 2 声道</span></div>
+					</div>
+					<div class="mock-chapters"><div class="mock-bar"><i style="left:20%"></i><i style="left:52%"></i><i style="left:81%"></i></div><span>1. 片头 · 2. 正片 · 3. 花絮</span></div>
+					<div class="mock-info"><span>容器：matroska</span><span>视频：hevc，1920×1080，23.98 fps</span><span>总码率：8.42 Mbps</span></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section" id="feature-04">
+	<div class="wrap">
+		<div class="deep rev">
+			<div>
+				<span class="kicker-en">Playback</span>
+				<h2>看片、学外语、扒素材，每种场景都顺手。</h2>
+				<p class="lead">A/B 循环反复听一段对白；迷你模式悬浮置顶摸鱼看比赛；倍速自动记住，下次打开还是 1.5x。</p>
+				<div class="mini-grid">
+					<div class="mini-card"><b>倍速 0.25–4x</b><span>控制条倍速按钮一键切换，跨启动记忆。</span></div>
+					<div class="mini-card"><b>A-B 循环</b><span>A/B 键设点反复播放，学外语、扒片神器。</span></div>
+					<div class="mini-card"><b>迷你模式 ⌘M</b><span>无边框置顶小窗，双击或 Esc 退出。</span></div>
+					<div class="mini-card"><b>画中画 + 媒体键</b><span>macOS 画中画；F7/F8/F9 播放键与控制中心 Now Playing。</span></div>
+				</div>
+			</div>
+			<div class="visual">
+				<div class="mock playback-mock">
+					<div class="mock-head">倍速 · A-B 循环 · 迷你模式 · 画中画</div>
+					<div class="mock-speed"><span class="mock-chip">0.5x</span><span class="mock-chip">0.75x</span><span class="mock-chip">1.0x</span><span class="mock-chip on">1.5x ✓</span><span class="mock-chip">2.0x</span><span class="mock-chip">4.0x</span></div>
+					<div class="mock-ab"><span>A 点 12:34</span><div class="mock-ab-bar"><i style="left:38%"></i><i style="left:61%"></i></div><span>B 点 19:58</span><div class="mock-ab-tag">A-B 循环中 ↻</div></div>
+					<div class="mock-mini"><div class="mock-mini-win">迷你模式 ⌘M · 置顶悬浮</div><div class="mock-pip">画中画 PiP</div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section alt" id="feature-05">
+	<div class="wrap">
+		<div class="deep">
+			<div>
+				<span class="kicker-en">Shortcuts &amp; Playlist</span>
+				<h2>手不离键盘，连续剧一部接一部。</h2>
+				<p class="lead">打开文件夹自动按自然顺序连播（第2集在第10集前）；播放列表侧栏拖拽排序、双击切换；关闭后从上次位置续播。</p>
+				<div class="mini-grid">
+					<div class="mini-card"><b>完整快捷键</b><span>空格/K 播放暂停，J/L 快进 10 秒，←→ 5 秒，↑↓ 音量。</span></div>
+					<div class="mini-card"><b>播放列表侧栏</b><span>⌘⇧L 开关，双击切换、Delete 移除、拖拽排序。</span></div>
+					<div class="mini-card"><b>自然排序连播</b><span>文件夹连播按数字感知排序，剧集顺序不乱。</span></div>
+					<div class="mini-card"><b>断点续播</b><span>每个文件记忆播放位置，最近播放菜单显示进度。</span></div>
+				</div>
+			</div>
+			<div class="visual">
+				<div class="mock playlist-mock">
+					<div class="mock-head">播放列表 · 自然排序 · 断点续播</div>
+					<div class="mock-pl-rows">
+						<div class="mock-pl-row"><span>第01集.mp4</span><i>已看完 · 上次 24:15</i></div>
+						<div class="mock-pl-row"><span>第02集.mp4</span><i>上次 12:40</i></div>
+						<div class="mock-pl-row on"><span>第03集.mp4</span><i>▶ 播放中 · 08:22</i></div>
+						<div class="mock-pl-row"><span>第04集.mp4</span><i>未观看</i></div>
+						<div class="mock-pl-row"><span>第10集.mp4</span><i>未观看</i></div>
+					</div>
+					<div class="mock-keys"><span class="mock-chip">空格 播放/暂停</span><span class="mock-chip">J/L ±10s</span><span class="mock-chip">←→ ±5s</span><span class="mock-chip">↑↓ 音量</span></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section" id="feature-06">
+	<div class="wrap">
+		<div class="deep rev">
+			<div>
+				<span class="kicker-en">Updates &amp; Distribution</span>
+				<h2>装一次，之后每次更新都自动完成。</h2>
+				<p class="lead">应用启动时静默检查新版本，一键更新。全部代码开源在 GitHub，构建脚本与发布流水线完全透明。</p>
+				<div class="mini-grid">
+					<div class="mini-card"><b>Sparkle 自动更新</b><span>后台检查新版本，应用菜单内随时手动检查。</span></div>
+					<div class="mini-card"><b>签名 + 公证</b><span>Apple Developer ID 签名并通过公证，无 Gatekeeper 拦截。</span></div>
+					<div class="mini-card"><b>MIT 开源</b><span>全部源码、构建脚本、发布流水线公开可查。</span></div>
+					<div class="mini-card"><b>零外部依赖</b><span>FFmpeg 全部动态库内嵌，单文件分发，无需安装任何组件。</span></div>
+				</div>
+			</div>
+			<div class="visual">
+				<div class="mock update-mock">
+					<div class="mock-head">自动更新 · 签名 · 公证 · 开源</div>
+					<div class="mock-update-card"><b>发现新版本 v1.0.6</b><span>本次更新：多音轨切换、章节跳转、A-B 循环……</span><div class="mock-update-actions"><span class="btn btn-primary btn-sm">立即更新</span><span class="btn btn-ghost btn-sm">稍后提醒</span></div></div>
+					<div class="mock-badges"><span class="chip">✓ Developer ID 签名</span><span class="chip">✓ Apple 公证</span><span class="chip">✓ MIT 开源</span><span class="chip">✓ 零外部依赖</span></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section" id="download">
+	<div class="wrap">
+		<div class="download-panel">
+			<div>
+				<span class="eyebrow"><span class="dot"></span>macOS 12+ · Apple Silicon</span>
+				<h2 style="margin-top:24px;">现在下载，v1.0.6 正式版</h2>
+				<p class="sub">签名 + 公证安装包，双击即装，无任何拦截。安装后自动检查更新，之后每次升级都是静默完成。</p>
+				<div class="hero-actions">
+					<a class="btn btn-primary" href="https://github.com/jackotom/videoplayer-mac/releases/latest/download/VideoPlayer-1.0.6.dmg">⬇ 免费下载 macOS 版</a>
+					<a class="btn btn-ghost" href="https://github.com/jackotom/videoplayer-mac/releases" rel="noopener" target="_blank">查看全部版本</a>
+				</div>
+				<div class="download-meta">
+					<span class="chip">版本 <b>v1.0.6</b></span>
+					<span class="chip">大小 <b>约 17 MB</b></span>
+					<span class="chip">系统 <b>macOS 12+</b></span>
+					<span class="chip">芯片 <b>Apple Silicon</b></span>
+					<span class="chip">协议 <b>MIT 开源</b></span>
+				</div>
+			</div>
+			<div>
+				<ol class="install-steps">
+					<li><span class="step">1</span><div><b>下载并挂载 DMG</b><span>双击 VideoPlayer-1.0.6.dmg 打开安装镜像。</span></div></li>
+					<li><span class="step">2</span><div><b>拖入 Applications</b><span>把「视频播放器」拖进 Applications 文件夹即可完成安装。</span></div></li>
+					<li><span class="step">3</span><div><b>开始播放</b><span>双击视频文件，或右键选择「打开方式 → 视频播放器」。</span></div></li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="section alt" id="changelog">
+	<div class="wrap">
+		<div class="section-head">
+			<div class="section-kicker">Changelog</div>
+			<h2 class="section-title">更新日志</h2>
+			<p class="section-sub">最新版本改进一览。完整历史见 <a style="color:var(--flink)" href="https://github.com/jackotom/videoplayer-mac/releases" rel="noopener" target="_blank">GitHub Releases</a>。</p>
+		</div>
+		<div class="changelog-list">
+			<article class="changelog-item">
+				<time datetime="2026-08-24">2026-08-24 · v1.0.6</time>
+				<h3><a href="#">1.0.6 发布</a></h3>
+				<p>多音轨切换与按文件记忆、章节跳转与进度条刻度、A-B 循环、字幕同步微调、截图、迷你模式、画中画、媒体键、自然排序连播；Developer ID 签名 + 公证 + Sparkle 自动更新。</p>
+			</article>
+		</div>
+	</div>
+</section>
+
+<section class="section" id="faq">
+	<div class="wrap">
+		<div class="section-head">
+			<div class="section-kicker">FAQ</div>
+			<h2 class="section-title">常见问题</h2>
+		</div>
+		<div class="faq-list">
+			<details class="faq-item"><summary>支持哪些视频格式？</summary><div class="faq-body">几乎全部。默认使用 AVFoundation 硬件解码，覆盖 MP4 / MOV / MKV / WebM 等常见格式；遇到无法解码的冷门格式（DivX/Xvid AVI、FLV、WMV、FFV1、DTS 音轨等）会自动切换 FFmpeg 软解，也可以按 ⌥⌘R 手动切换。</div></details>
+			<details class="faq-item"><summary>系统要求是什么？</summary><div class="faq-body">Apple Silicon（M 系列芯片）Mac，macOS 12 或更高版本。应用零外部依赖，无需安装 FFmpeg 等任何组件。</div></details>
+			<details class="faq-item"><summary>收费吗？</summary><div class="faq-body">完全免费、开源（MIT 协议）。代码托管在 GitHub，欢迎提 Issue 与 PR。</div></details>
+			<details class="faq-item"><summary>安装时提示「无法打开，因为无法验证开发者」怎么办？</summary><div class="faq-body">本应用使用 Apple Developer ID 签名并经过 Apple 公证，正常情况下双击即可安装。若仍被拦截，右键点击安装包 → 「打开」，确认一次即可。</div></details>
+			<details class="faq-item"><summary>如何让字幕、音轨选择自动记住？</summary><div class="faq-body">播放器会按文件记忆你选择的音轨、内嵌字幕轨，以及是否关闭字幕。再次打开同一文件时自动恢复。</div></details>
+			<details class="faq-item"><summary>会自动更新吗？</summary><div class="faq-body">会。应用内置 Sparkle 自动更新，启动时静默检查新版本并提示安装；也可以在应用菜单中点「检查更新…」手动检查。</div></details>
+			<details class="faq-item"><summary>支持画中画和投屏吗？</summary><div class="faq-body">支持画中画（macOS 12+，硬解模式），控制条上也有隔空播放（AirPlay）输出路由按钮。</div></details>
+		</div>
+	</div>
+</section>
+
+</main>
+
+<footer class="site-footer">
+	<div class="wrap">
+		<div class="footer-grid">
+			<div>
+				<a class="brand" href="#"><img src="wp-theme/videoplayer/assets/img/icon.png" alt="视频播放器 图标" width="30" height="30"><span>视频播放器</span></a>
+				<p style="margin:14px 0 0;line-height:1.8;">双解码后端，真正通吃所有格式：AVFoundation 硬件解码省电流畅，FFmpeg 软解兜底无死角。……</p>
+			</div>
+			<div><h4>产品</h4><ul><li><a href="#features">功能特性</a></li><li><a href="#download">下载安装</a></li><li><a href="#changelog">更新日志</a></li><li><a href="#faq">常见问题</a></li></ul></div>
+			<div><h4>资源</h4><ul><li><a href="https://github.com/jackotom/videoplayer-mac" rel="noopener" target="_blank">GitHub 仓库</a></li><li><a href="https://github.com/jackotom/videoplayer-mac/releases" rel="noopener" target="_blank">全部版本</a></li><li><a href="https://github.com/jackotom/videoplayer-mac/issues" rel="noopener" target="_blank">问题反馈</a></li></ul></div>
+			<div><h4>协议</h4><ul><li><a href="https://github.com/jackotom/videoplayer-mac" rel="noopener" target="_blank">MIT 开源协议</a></li><li><a href="#">隐私说明</a></li></ul></div>
+		</div>
+		<div class="footer-bottom"><span>© 2026 视频播放器 · 轻量原生 macOS 播放器</span><span>当前版本 v1.0.6</span></div>
+	</div>
+</footer>
+</div>
+<script src="wp-theme/videoplayer/assets/js/site.js"></script>
+</body>
+</html>
